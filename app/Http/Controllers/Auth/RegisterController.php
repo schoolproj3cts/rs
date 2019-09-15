@@ -66,6 +66,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'registered_ip' =>  request()->ip(),
+            'user_agent' => request()->header('User-Agent'),
         ]);
     }
 }
