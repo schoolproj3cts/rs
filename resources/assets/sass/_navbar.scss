@@ -1,0 +1,38 @@
+.rs-navbar {
+
+  background-color: #186de7;
+
+  .navbar-brand {
+    color: #fff;
+  }
+
+  .navbar-bg {
+    background-color: #186de7;
+  }
+
+  //.search-bar {
+  //  margin: 0 auto;
+  //}
+
+  .search {
+    width: 400px;
+  }
+
+  .button-search {
+    position: relative;
+    top: 0;
+    background-color: transparent;
+    color: #0090e3;
+    border: unset;
+    right: 50px;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: #fff;
+      }
+    }
+  }
+
+}
