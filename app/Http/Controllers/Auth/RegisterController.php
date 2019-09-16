@@ -63,11 +63,24 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'type' => $data['type'],
+            'salutation' => $data['salutation'],
+            'firstname' => $data['firstname'],
+            'prefix' => $data['prefix'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'postal_code' => $data['postal_code'],
+            'house_number' => $data['house_number'],
+            'suffix' => $data['suffix'],
+            'street_name' => $data['street_name'],
+            'city' => $data['city'],
+            'country' => $data['country'],
+            'phone_number' => $data['phone_number'],
+            'phone_number_2' => $data['phone_number_2'],
+            'birth_date' => $data['birth_date'],
             'registered_ip' =>  request()->ip(),
-            'user_agent' => request()->header('User-Agent'),
+
         ]);
     }
 }
