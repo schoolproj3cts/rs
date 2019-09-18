@@ -19,9 +19,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <title>{{ config('app.name', 'Real-Shit') }} | title</title>
     <script src="https://kit.fontawesome.com/8a02c36757.js"></script>
+    <script src="{{ asset('js/fontawesomepro.js') }}" defer></script>
 </head>
 <body class="body">
 @include('includes/navbar')
+@include('includes/search')
 @yield('content')
 @include('includes/footer')
 </body>
