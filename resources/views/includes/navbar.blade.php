@@ -41,6 +41,11 @@
                             </form>
                         </div>
                     </li>
+                    @if(Auth::user()->isAdmin())
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fal fa-user-secret"></i></a>
+                        </li>
+                    @endif
                 @endguest
             </ul>
         </div>
