@@ -11,14 +11,12 @@
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <title>{{ config('app.name', 'Real-Shit') }} {{$pagename}}</title>
     <meta charset="UTF-8">
     <meta name="description" content="meta text">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>{{ config('app.name', 'Real-Shit') }} | title</title>
-    <script src="https://kit.fontawesome.com/8a02c36757.js"></script>
     <script src="{{ asset('js/fontawesomepro.js') }}" defer></script>
 </head>
 <body class="body">

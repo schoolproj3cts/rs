@@ -4,6 +4,10 @@
 
   .navbar-brand {
     color: #fff;
+
+    &:hover {
+      color: #e3e3e3;
+    }
   }
 
   .navbar-bg {
@@ -11,9 +15,27 @@
   }
 
   .navbar-nav {
+
+    .dropdown-menu {
+      background-color: #186de7;
+      border: unset;
+
+      a {
+        color: #fff;
+
+        &:hover {
+          background-color: #2679f1;
+        }
+      }
+    }
+
     .nav-item {
       .nav-link {
         color: #fff;
+
+        &:hover {
+          color: #e3e3e3;
+        }
       }
     }
   }

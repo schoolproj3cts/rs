@@ -8,25 +8,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 @guest
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}"><i class="fal fa-user"></i> {{ __('Inloggen') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="{{ route('register') }}"><i class="far fa-user-plus"></i> {{ __('Registreren') }}</a>
                     </li>
                 @else
                     <li class="nav-item">
@@ -40,10 +26,19 @@
                             <i class="far fa-user"></i> {{ Auth::user()->firstname }} {{ Auth::user()->prefix }} {{ Auth::user()->lastname }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#"><i class="fal fa-truck"></i> Mijn bestellingen</a>
+                            <a class="dropdown-item" href="#"><i class="fal fa-user-tag"></i> Mijn gegevens</a>
+                            <a class="dropdown-item" href="#"><i class="fal fa-list-alt"></i> Mijn verlanglijstje</a>
+                            <a class="dropdown-item" href="#"><i class="fal fa-shopping-cart"></i> Mijn Winkelmandje</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="fal fa-sign-out-alt"></i> {{ __('Uitloggen') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 @endguest

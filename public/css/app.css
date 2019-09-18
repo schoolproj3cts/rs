@@ -11658,12 +11658,33 @@ a.text-dark:focus {
   color: #fff;
 }
 
+.rs-navbar .navbar-brand:hover {
+  color: #e3e3e3;
+}
+
 .rs-navbar .navbar-bg {
   background-color: #186de7;
 }
 
+.rs-navbar .navbar-nav .dropdown-menu {
+  background-color: #186de7;
+  border: unset;
+}
+
+.rs-navbar .navbar-nav .dropdown-menu a {
+  color: #fff;
+}
+
+.rs-navbar .navbar-nav .dropdown-menu a:hover {
+  background-color: #2679f1;
+}
+
 .rs-navbar .navbar-nav .nav-item .nav-link {
   color: #fff;
+}
+
+.rs-navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #e3e3e3;
 }
 
 .search-block {
