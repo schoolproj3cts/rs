@@ -21,7 +21,7 @@
 </head>
 <body class="body">
 @include('includes/navbar')
-@include('includes/search')
+{{--@include('includes/search')--}}
 @yield('content')
 @include('includes/footer')
 </body>
