@@ -18,9 +18,9 @@
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fal fa-user"></i></span>
                                 </div>
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} login-input" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
                                 @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback text-center" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -29,7 +29,7 @@
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fal fa-lock-alt"></i></span>
                                 </div>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Wachtwoord">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} login-input" name="password" required placeholder="Wachtwoord">
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>

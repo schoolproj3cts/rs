@@ -15,12 +15,18 @@
                         <a class="nav-link" href="{{ route('register') }}"><i class="far fa-user-plus"></i> {{ __('Registreren') }}</a>
                     </li>
                 @else
+                    @if(Auth::user()->isAdmin())
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fal fa-tools"></i></a>
+                        </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="far fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="far fa-user"></i> {{ Auth::user()->firstname }} {{ Auth::user()->prefix }} {{ Auth::user()->lastname }}
@@ -41,11 +47,6 @@
                             </form>
                         </div>
                     </li>
-                    @if(Auth::user()->isAdmin())
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fal fa-user-secret"></i></a>
-                        </li>
-                    @endif
                 @endguest
             </ul>
         </div>
