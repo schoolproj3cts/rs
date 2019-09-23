@@ -11768,3 +11768,75 @@ a.text-dark:focus {
   color: #fff;
 }
 
+.register-page {
+  position: relative;
+  top: 80px;
+}
+
+.register-page .register-card {
+  height: 850px;
+  width: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #f5f8fa;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.register-page .register-card .register-logo {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: #186de7;
+  padding: 10px;
+  text-align: center;
+}
+
+.register-page .register-card .register-logo .logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.register-page .register-card .register-container {
+  padding: 0 2rem;
+}
+
+.register-page .register-card .register-container .input-group {
+  margin-bottom: 1rem !important;
+}
+
+.register-page .register-card .register-container .input-group .input-group-text {
+  background: #186de7;
+  color: #fff;
+  border: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.register-page .register-card .register-container .input-group .register-input {
+  width: 230px !important;
+}
+
+.register-page .register-card .register-container .register-button {
+  width: 100%;
+  background: #186de7;
+  color: #fff;
+}
+

@@ -1,171 +1,78 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf
-
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Type account') }}</label>
-
-                            <div class="col-md-2">
-                                <select class="form-control" id="type" name="type" value="{{ old('type') }}" required autofocus>
-                                    <option value="Particulier">Particulier</option>
-                                    <option value="Zakelijk">Zakelijk</option>
-                                </select>
-                            </div>
-
+    <div class="container">
+        <div class="register-page">
+                <div class="register-card">
+                    <div class="d-flex justify-content-center">
+                        <div class="register-logo">
+                            <img src="/images/logo.png" class="logo" alt="Logo">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Aanhef') }}</label>
-
-                            <div class="col-md-2">
+                    </div>
+                    <div class="d-flex justify-content-center register-container">
+                        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                            @CSRF
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fal fa-user-alt"></i></span>
+                                    </div>
+                                    <select class="form-control" id="type" name="type" value="{{ old('type') }}" required autofocus>
+                                        <option selected="" disabled="" value="">Type account</option>
+                                        <option value="Particulier">Particulier</option>
+                                        <option value="Zakelijk">Zakelijk</option>
+                                    </select>
+                                </div>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-venus-mars"></i></span>
+                                </div>
                                 <select class="form-control" id="salutation" name="salutation" value="{{ old('salutation') }}" required autofocus>
+                                    <option selected="" disabled="" value="">Aanhef</option>
                                     <option value="Dhr.">Dhr.</option>
                                     <option value="Mevr.">Mevr.</option>
                                 </select>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Naam') }}</label>
-
-                            <div class="col-md-2">
-                                <input id="firstname" type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" value="{{ old('firstname') }}" required autofocus placeholder="Voornaam">
-
-                                @if ($errors->has('firstname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('firstname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="col-md-2">
-                                <input id="prefix" type="text" class="form-control{{ $errors->has('prefix') ? ' is-invalid' : '' }}" name="prefix" value="{{ old('prefix') }}" autofocus placeholder="Tussenv.">
-
-                                @if ($errors->has('prefix'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('prefix') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="col-md-2">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-id-card"></i></span>
+                                </div>
+                                <input id="firstname" type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }} mr-2" name="firstname" value="{{ old('firstname') }}" required autofocus placeholder="Voornaam">
+                                <input id="prefix" type="text" class="form-control{{ $errors->has('prefix') ? ' is-invalid' : '' }} mr-2" name="prefix" value="{{ old('prefix') }}" autofocus placeholder="Tussenvoegsel">
                                 <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus placeholder="Achternaam">
-
-                                @if ($errors->has('lastname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                                @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}</label>
-
-                            <div class="col-md-2">
-                                <input id="postal_code" type="text" class="form-control{{ $errors->has('postal_code') ? ' is-invalid' : '' }}" name="postal_code" value="{{ old('postal_code') }}" required autofocus placeholder="Postcode">
-
-                                @if ($errors->has('postal_code'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('postal_code') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-home-lg"></i></span>
+                                </div>
+                                <input id="postal_code" type="text" class="form-control{{ $errors->has('postal_code') ? ' is-invalid' : '' }} mr-2" name="postal_code" value="{{ old('postal_code') }}" required autofocus placeholder="Postcode">
+                                <input id="house_number" type="text" class="form-control{{ $errors->has('house_number') ? ' is-invalid' : '' }} mr-2" name="house_number" value="{{ old('house_number') }}" required autofocus placeholder="Huisnummer">
+                                <input id="suffix" type="text" class="form-control{{ $errors->has('suffix') ? ' is-invalid' : '' }}" name="suffix" value="{{ old('suffix') }}" autofocus placeholder="Toevoeging">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Huisnummer') }}</label>
-
-                            <div class="col-md-2">
-                                <input id="house_number" type="text" class="form-control{{ $errors->has('house_number') ? ' is-invalid' : '' }}" name="house_number" value="{{ old('house_number') }}" required autofocus placeholder="Nr.">
-
-                                @if ($errors->has('house_number'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('house_number') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="col-md-2">
-                                <input id="suffix" type="text" class="form-control{{ $errors->has('suffix') ? ' is-invalid' : '' }}" name="suffix" value="{{ old('suffix') }}" autofocus placeholder="Toev.">
-
-                                @if ($errors->has('suffix'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('suffix') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Straatnaam') }}</label>
-
-                            <div class="col-md-2">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-road"></i></span>
+                                </div>
                                 <input id="street_name" type="text" class="form-control{{ $errors->has('street_name') ? ' is-invalid' : '' }}" name="street_name" value="{{ old('street_name') }}" required autofocus placeholder="Straatnaam">
-
-                                @if ($errors->has('street_name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('street_name') }}</strong>
-                                    </span>
-                                @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Stad') }}</label>
-
-                            <div class="col-md-2">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-flag"></i></span>
+                                </div>
+                                <input id="country" type="text" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }} mr-2" name="country" value="{{ old('country') }}" required autofocus placeholder="Land">
                                 <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required autofocus placeholder="Stad">
-
-                                @if ($errors->has('city'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('city') }}</strong>
-                                    </span>
-                                @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Land') }}</label>
-
-                            <div class="col-md-4">
-                                <input id="country" type="text" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" name="country" value="{{ old('country') }}" required autofocus placeholder="Land">
-
-                                @if ($errors->has('country'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('country') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Telefoonnummer') }}</label>
-
-                            <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-phone"></i></span>
+                                </div>
                                 <input id="phone_number" type="tel" class="form-control{{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number" value="{{ old('phone_number') }}" required autofocus placeholder="Telefoonnummer">
-
-                                @if ($errors->has('phone_number'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('phone_number') }}</strong>
-                                    </span>
-                                @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Geboortedatum') }}</label>
-
-                            <div class="col-md-2">
-                                <select class="form-control" id="birth_day" name="birth_day" value="{{ old('birth_day') }}" required autofocus>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
+                                </div>
+                                <select class="form-control mr-2" id="birth_day" name="birth_day" value="{{ old('birth_day') }}" required autofocus>
                                     <option selected="" disabled="" value="">Dag</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -199,10 +106,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                            </div>
-
-                            <div class="col-md-2">
-                                <select class="form-control" id="birth_month" name="birth_month" value="{{ old('birth_month') }}" required autofocus>
+                                <select class="form-control mr-2" id="birth_month" name="birth_month" value="{{ old('birth_month') }}" required autofocus>
                                     <option selected="" disabled="" value="">Maand</option>
                                     <option value="januari">januari</option>
                                     <option value="februari">februari</option>
@@ -217,9 +121,6 @@
                                     <option value="november">november</option>
                                     <option value="december">december</option>
                                 </select>
-                            </div>
-
-                            <div class="col-md-2">
                                 <select class="form-control" id="birth_year" name="birth_year" value="{{ old('birth_year') }}" required autofocus>
                                     <option selected="" disabled="" value="">Jaar</option>
                                     <option value="2019">2019</option>
@@ -342,26 +243,21 @@
                                     <option value="1902">1902</option>
                                 </select>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-envelope"></i></span>
+                                </div>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required placeholder="Email">
-
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-lock"></i></span>
+                                </div>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Wachtwoord">
 
                                 @if ($errors->has('password'))
@@ -370,27 +266,22 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fal fa-lock-alt"></i></span>
+                                </div>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Wachtwoord bevestigen">
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-success">
-                                    {{ __('Registreren') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                            <button type="submit" class="btn btn-success">
+                                {{ __('Registreren') }}
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
-</div>
+
+
+
+
 @endsection
