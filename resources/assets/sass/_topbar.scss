@@ -1,0 +1,44 @@
+.top-bar {
+
+  background-color: #fff;
+
+  .top-bar-text {
+
+    position: relative;
+    top: 6px;
+
+    .left {
+      float: left;
+      width: 48%;
+      display: inline-block;
+      color: black;
+
+      a {
+        color: black;
+
+        &:hover {
+          color: #186de7;
+          text-decoration: none;
+        }
+      }
+
+      &:hover {
+        color: #186de7;
+      }
+    }
+
+    .right {
+      float:right;
+      text-align: right;
+      width: 50%;
+      display: inline-block;
+      position: relative;
+      right: 5px;
+      color: black;
+
+      &:hover {
+        color: #186de7;
+      }
+    }
+  }
+}

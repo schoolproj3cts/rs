@@ -12,6 +12,11 @@
   background-color: #186de7;
 }
 
+.primary-color-text {
+  color: #186de7;
+}
+
 @import 'navbar';
 @import 'search';
 @import 'auth';
+@import 'topbar';

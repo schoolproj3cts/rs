@@ -11650,6 +11650,10 @@ a.text-dark:focus {
   background-color: #186de7;
 }
 
+.primary-color-text {
+  color: #186de7;
+}
+
 .rs-navbar {
   background-color: #186de7;
 }
@@ -11836,7 +11840,49 @@ a.text-dark:focus {
 
 .register-page .register-card .register-container .register-button {
   width: 100%;
-  background: #186de7;
   color: #fff;
+}
+
+.top-bar {
+  background-color: #fff;
+}
+
+.top-bar .top-bar-text {
+  position: relative;
+  top: 6px;
+}
+
+.top-bar .top-bar-text .left {
+  float: left;
+  width: 48%;
+  display: inline-block;
+  color: black;
+}
+
+.top-bar .top-bar-text .left a {
+  color: black;
+}
+
+.top-bar .top-bar-text .left a:hover {
+  color: #186de7;
+  text-decoration: none;
+}
+
+.top-bar .top-bar-text .left:hover {
+  color: #186de7;
+}
+
+.top-bar .top-bar-text .right {
+  float: right;
+  text-align: right;
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  right: 5px;
+  color: black;
+}
+
+.top-bar .top-bar-text .right:hover {
+  color: #186de7;
 }
 

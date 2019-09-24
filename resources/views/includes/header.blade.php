@@ -20,6 +20,7 @@
     <script src="{{ asset('js/fontawesomepro.js') }}" defer></script>
 </head>
 <body class="body">
+@include('includes/top')
 @include('includes/navbar')
 {{--@include('includes/search')--}}
 @yield('content')
