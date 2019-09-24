@@ -14,16 +14,19 @@
     <meta charset="UTF-8">
     <meta name="description" content="meta text">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ config('app.name', 'Real-Shit') }} {{$pagename}}</title>
+    <title>{{ config('app.name', 'Auspicious') }} {{$pagename}}</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/fontawesomepro.js') }}" defer></script>
+    <script src="http://unpkg.com/portal-vue"></script>
 </head>
 <body class="body">
-@include('includes/top')
-@include('includes/navbar')
-{{--@include('includes/search')--}}
-@yield('content')
-@include('includes/footer')
+<div id="auspicious">
+    @include('includes/top')
+    @include('includes/navbar')
+    {{--@include('includes/search')--}}
+    @yield('content')
+    @include('includes/footer')
+</div>
 </body>
 </html>

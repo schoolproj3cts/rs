@@ -272,7 +272,7 @@
                                 </div>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Wachtwoord bevestigen">
                             </div>
-                            <button type="submit" class="btn btn-success register-button">
+                            <button type="submit" class="btn primary-color register-button">
                                 {{ __('Registreren') }}
                             </button>
                         </form>
