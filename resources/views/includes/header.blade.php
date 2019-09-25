@@ -22,7 +22,6 @@
 </head>
 <body class="body">
 <div id="auspicious">
-    @include('cookieConsent::index')
     @include('includes/top')
     @include('includes/navbar')
     {{--@include('includes/search')--}}
